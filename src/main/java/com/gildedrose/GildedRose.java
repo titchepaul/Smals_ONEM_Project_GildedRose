@@ -1,7 +1,7 @@
 package com.gildedrose;
 
 class GildedRose {
-    Item[] items;
+    private Item[] items;
 
     private static final String AGED_BRIE_NAME = "Aged Brie";
     private static final String BACKSTAGE_PASSES_NAME = "Backstage passes to a TAFKAL80ETC concert";
@@ -66,16 +66,20 @@ class GildedRose {
         }
     }
 
+
+    public Item[] getItems() {
+        return items;
+    }
     /**
      * this method update all items
      */
     public void updateQualityBis(){
+
         for(Item item : items){
-            if(item.name.equals(SULFURAS_NAME)){
+            if(item.name.equals(SULFURAS_NAME)) {
                 continue;
             }
             updateSellIn(item);
-
             if(item.name.equals(AGED_BRIE_NAME)){
                 updateAgedBrie(item);
             }else if(item.name.equals(BACKSTAGE_PASSES_NAME)){
