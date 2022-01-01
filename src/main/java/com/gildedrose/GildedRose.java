@@ -75,17 +75,19 @@ class GildedRose {
      */
     public void updateQualityBis(){
 
-        for(Item item : items){
-            if(item.name.equals(SULFURAS_NAME)) {
-                continue;
-            }
-            updateSellIn(item);
-            if(item.name.equals(AGED_BRIE_NAME)){
-                updateAgedBrie(item);
-            }else if(item.name.equals(BACKSTAGE_PASSES_NAME)){
-                updateBackstagePasses(item);
-            }else{
-                updateOthersItems(item);
+        if(getItems() != null){
+            for(Item item : items){
+                if(item.name.equals(SULFURAS_NAME)) {
+                    continue;
+                }
+                updateSellIn(item);
+                if(item.name.equals(AGED_BRIE_NAME)){
+                    updateAgedBrie(item);
+                }else if(item.name.equals(BACKSTAGE_PASSES_NAME)){
+                    updateBackstagePasses(item);
+                }else{
+                    updateOthersItems(item);
+                }
             }
         }
     }

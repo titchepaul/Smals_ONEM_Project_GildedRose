@@ -23,15 +23,17 @@ public class TexttestFixture {
             days = Integer.parseInt(args[0]) + 1;
         }
 
-        for (int i = 0; i < 15; i++) {
-            System.out.println("-------- day " + i + " --------");
-            System.out.println("name, sellIn, quality");
-            for (Item item : items) {
-                System.out.println(item);
+        for (int i = 0; i < days; i++) {
+            if(!(app.getItems() == null || app.getItems().length == 0)){
+                System.out.println("-------- day " + i + " --------");
+                System.out.println("name, sellIn, quality");
+                for (Item item : items) {
+                    System.out.println(item);
+                }
+                System.out.println();
+                app.updateQualityBis();
+                //app.updateQuality();
             }
-            System.out.println();
-            app.updateQualityBis();
-            //app.updateQuality();
         }
     }
 
